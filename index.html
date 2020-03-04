@@ -3,86 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/fadac8530c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
-  <script>
-    
-    let possibleChoice = [
-      'rock', 
-      'paper', 
-      'scissors'
-    ]
+  <header>
+    <h1>Rock Paper Scissors!</h1>
+    <p class="rules"> First to 5, wins!</p>      
+  </header>  
 
-    let score = {
-      player: 0,
-      computer: 0
-    }
+  <div class="buttons">
+    <button id="start-game">Start Game</button>
+    <button id="reset-game" class="hidden">Reset</button>
+  </div>
 
-    // Generates a random selection for the computer
-    function computerPlay() {
-      return possibleChoice[Math.floor(Math.random() * possibleChoice.length)];
-    }
+  <div class="result hidden"></div>
 
-    // Ensures player enters valid choice
-    function validate(playerSelection) {
-        return possibleChoice.includes(playerSelection.toLowerCase());
-      }
+  <div class="container hidden">
+    <div class="game-area">
+      <h2>Scores</h2>
+      <div class="scores">
+        <span id="name">User</span>
+        <span id="user-score">0</span>
+        <span id="dash">-</span>
+        <span id="computer-score">0</span>
+        <span>Computer</span>
+      </div>
 
-    // The game
-    function game(n = 5) {
-      for (let round = 0; round < n; round ++) {
-      let playerSelection = prompt('Rock, Paper or Scissors?');
-      let computerSelection = computerPlay();
-      if (validate(playerSelection)) {
-            console.log(playRound(playerSelection, computerSelection));
-          } else {
-            alert('Invalid input, please choose between rock, paper, or scissors!');
-      }
-      }
+      <div class="player-choices">
+        <button class="rock" value="rock"><i class="far fa-hand-rock fa-2x"></i></button>
+        <button class="paper" value="paper"><i class="far fa-hand-paper fa-2x"></i></button>
+        <button class="scissors" value="scissors"><i class="far fa-hand-scissors fa-2x"></i></button>
+      </div>
 
-      // Returns the results
-      if (score.player > score.computer) {
-        alert("Congratulations! You won the game");
-      } else if (score.player < score.computer) {
-        alert("Sorry you lost the game :( Better luck next time!");
-      } else {
-        alert("It's a draw!");
-      }
-    }
-
-    // Counts the scores
-    function updateScore(name) {
-      score[name] += 1;
-    }
-
-    function playRound(playerSelection, computerSelection) {
-        if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-          return `Draw, you both select ${playerSelection.toLowerCase()}`;
-        } else if ((playerSelection.toLowerCase() == 'rock') && (computerSelection.toLowerCase() == 'paper')) {
-          // updateScore('computer');
-          return `You lose this round! ${computerSelection.toLowerCase()} beats ${playerSelection.toLowerCase()}`;
-        } else if ((playerSelection.toLowerCase() == 'rock') && (computerSelection.toLowerCase() == 'scissors')) {
-          // updateScore('player');
-          return `You win this round! ${playerSelection.toLowerCase()} beats ${computerSelection.toLowerCase()}`;
-        } else if ((playerSelection.toLowerCase() == 'paper') && (computerSelection.toLowerCase() == 'scissors')) {
-          // updateScore('computer');
-          return `You lose this round! ${computerSelection.toLowerCase()} beats ${playerSelection.toLowerCase()}`;
-        } else if ((playerSelection.toLowerCase() == 'paper') && (computerSelection.toLowerCase() == 'rock')) {
-          // updateScore('player');
-          return `You win this round! ${playerSelection.toLowerCase()} beats ${computerSelection.toLowerCase()}`;
-        } else if ((playerSelection.toLowerCase() == 'scissors') && (computerSelection.toLowerCase() == 'rock')) {
-          // updateScore('computer');
-          return `You lose this round! ${computerSelection.toLowerCase()} beats ${playerSelection.toLowerCase()}`;
-        } else if ((playerSelection.toLowerCase() == 'scissors') && (computerSelection.toLowerCase() == 'paper')) {
-          // updateScore('player');
-          return `You win this round! ${playerSelection.toLowerCase()} beats ${computerSelection.toLowerCase()}`;
-        }
-      }
-
-      game();
-
-  </script>
-
+      <p id="commentary">Make your selection!</p>
+    </div>
+  </div> 
+  <script type="text/javascript" src="script.js"></script> 
 </body>
 </html>

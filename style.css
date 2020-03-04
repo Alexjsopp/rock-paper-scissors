@@ -1,0 +1,103 @@
+html, body {
+  background: #2193b0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:0;
+  font-family: sans-serif, arial;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.buttons {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+#start-game {
+  padding: 10px;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#start-game:hover {
+  box-shadow: 0 3px 8px 0 rgba(32,33,36,0.40);
+  text-decoration: underline;
+}
+
+#reset-game {
+  padding: 10px;
+  color: white;
+  background-color: #FF4135;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#reset-game:hover {
+  box-shadow: 0 3px 8px 0 rgba(32,33,36,0.40);
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.container{
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+}
+.game-area {
+  width: 50%;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+}
+
+#user-score, #dash, #computer-score {
+  font-size: 30px;
+  padding: 0 10px;
+}
+
+.player-choices {
+  padding-top: 20px;
+}
+
+.player-choices > button {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.player-choices > button:hover {
+  box-shadow: 0 3px 8px 0 rgba(32,33,36,0.40);
+  text-decoration: underline;
+}
+
+.result {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  padding-top: 50px;
+}
